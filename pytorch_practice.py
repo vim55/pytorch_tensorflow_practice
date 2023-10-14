@@ -85,8 +85,16 @@ for epoch in tqdm(range(num_epochs), desc="Training"):
 test_loss = criterion(model(x_test), y_test).item()
 print("Test loss:", test_loss)
 
+# save trained model
+torch.save(model.state_dict(), "trained_model.pth")
+# Assuming 'model' is the same architecture as when it was saved
+# model.load_state_dict(torch.load("trained_model.pth"))
+# model.eval()  # Set the model to evaluation mode
+
+
 # Use the model to make predictions on new data
 new_data = torch.FloatTensor([[0.7], [0.8]])
 predictions = model(new_data)
+
 print("Predictions for new data:")
 print(predictions)

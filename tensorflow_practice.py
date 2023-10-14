@@ -62,6 +62,11 @@ test_acc = 1 - test_loss  # Calculate accuracy in the same way
 print("Test loss:", test_loss)
 print("Test accuracy:", test_acc)
 
+# save trained model
+model.save("trained_model.h5")
+# Load the model from the SavedModel format
+# loaded_model = tf.keras.models.load_model("trained_model.h5")
+
 # Use the model to make predictions on new data
 new_data = np.array([[0.7], [0.8]])
 predictions = model.predict(new_data)
