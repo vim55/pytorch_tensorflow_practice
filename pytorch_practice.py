@@ -8,7 +8,7 @@ from tqdm import tqdm
 # Generate some example data
 # y = 2x + 1
 data = np.random.rand(100, 1)  # Input data
-labels = 2 * data + 1 + np.random.randn(100, 1) * 0.1  # Linear relationship with some noise
+labels = 2 * data + 1 + np.random.randn(100, 1) * 0.01  # Linear relationship with some noise
 
 # Split the data into training and testing sets
 split_ratio = 0.8
